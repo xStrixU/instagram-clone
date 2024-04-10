@@ -1,11 +1,11 @@
 import { unstable_setRequestLocale } from 'next-intl/server';
 
-import { locales } from '@/modules/i18n/i18n';
+import { locales } from '@/features/i18n/i18n';
 
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import type { ReactNode } from 'react';
 
-import type { LocaleParams } from '@/modules/i18n/types/i18n.types';
+import type { LocaleParams } from '@/features/i18n/types/i18n.types';
 
 import '@/common/assets/styles/globals.css';
 
@@ -18,6 +18,10 @@ export const metadata: Metadata = {
 		template: '%s • Instagram',
 		default: 'Instagram',
 	},
+};
+
+export const viewport: Viewport = {
+	userScalable: false,
 };
 
 type RootLayoutProps = Readonly<{
