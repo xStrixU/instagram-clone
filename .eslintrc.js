@@ -8,6 +8,7 @@ module.exports = {
 		'plugin:import/recommended',
 		'plugin:import/typescript',
 		'plugin:prettier/recommended',
+		'plugin:storybook/recommended',
 	],
 	rules: {
 		'@typescript-eslint/consistent-type-imports': [

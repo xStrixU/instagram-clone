@@ -1,7 +1,7 @@
 import { useTranslations } from 'next-intl';
 import { unstable_setRequestLocale } from 'next-intl/server';
 
-import type { LocaleParams } from '@/modules/i18n/types/i18n.types';
+import type { LocaleParams } from '@/features/i18n/types/i18n.types';
 
 type IndexPageProps = Readonly<{
 	params: LocaleParams;
