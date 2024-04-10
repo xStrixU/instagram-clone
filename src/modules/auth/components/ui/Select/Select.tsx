@@ -17,7 +17,7 @@ export const Select = ({ options, ...props }: SelectProps) => (
 			className="pointer-events-none absolute right-2 top-1/2 -translate-y-1/2"
 		/>
 		<select
-			className="h-9 appearance-none rounded border border-stroke bg-primary bg-secondary pl-2 pr-6 text-sm outline-none"
+			className="h-9 appearance-none rounded border border-stroke bg-primary pl-2 pr-6 text-sm outline-none"
 			{...props}
 		>
 			{options.map(({ value, children }) => (
