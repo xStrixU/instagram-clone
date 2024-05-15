@@ -1,6 +1,12 @@
+import { fileURLToPath } from 'node:url';
+
+import createJiti from 'jiti';
 import createNextIntlPlugin from 'next-intl/plugin';
 
+const jiti = createJiti(fileURLToPath(import.meta.url));
 const withNextIntl = createNextIntlPlugin('./src/features/i18n/i18n.ts');
+
+jiti('./src/common/lib/env.ts');
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
