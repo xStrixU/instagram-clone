@@ -12,7 +12,7 @@ type SignUpAuthBoxNextButtonProps = Omit<
 export const SignUpAuthBoxNextButton = (
 	props: SignUpAuthBoxNextButtonProps,
 ) => {
-	const t = useTranslations('auth.SignUpAuthBox.steps');
+	const t = useTranslations('auth.sign-up.SignUpAuthBox.steps');
 
 	return <Button {...props}>{t('next')}</Button>;
 };

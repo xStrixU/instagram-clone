@@ -5,7 +5,7 @@ import { SignUpConfirmationCodeAuthBoxUpperContentResendCodeButton } from './Sig
 
 export const SignUpConfirmationCodeAuthBoxUpperContent = () => {
 	const { formData } = useSignUpAuthBoxContext();
-	const t = useTranslations('auth.SignUpAuthBox.confirmation-code');
+	const t = useTranslations('auth.sign-up.SignUpAuthBox.confirmation-code');
 
 	return (
 		<>

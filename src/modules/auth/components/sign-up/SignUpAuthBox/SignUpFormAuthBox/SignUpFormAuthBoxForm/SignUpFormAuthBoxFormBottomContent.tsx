@@ -3,7 +3,9 @@ import { useTranslations } from 'next-intl';
 import { InfoText } from '@/modules/auth/components/common/InfoText/InfoText';
 
 export const SignUpFormAuthBoxFormBottomContent = () => {
-	const t = useTranslations('auth.SignUpAuthBox.form.form.bottomContent');
+	const t = useTranslations(
+		'auth.sign-up.SignUpAuthBox.form.form.bottomContent',
+	);
 
 	return (
 		<div className="mt-2 flex flex-col gap-4">

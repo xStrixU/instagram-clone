@@ -7,7 +7,7 @@ type SignUpAuthBoxGoBackButtonProps = Readonly<{
 export const SignUpAuthBoxGoBackButton = ({
 	onClick,
 }: SignUpAuthBoxGoBackButtonProps) => {
-	const t = useTranslations('auth.SignUpAuthBox.steps');
+	const t = useTranslations('auth.sign-up.SignUpAuthBox.steps');
 
 	return (
 		<button

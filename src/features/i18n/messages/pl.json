@@ -1,59 +1,71 @@
 {
 	"auth": {
-		"SignInAuthBox": {
-			"form": {
-				"login": "Numer telefonu, nazwa użytkownika lub adres e-mail",
-				"password": "Hasło",
-				"submit": "Zaloguj się"
+		"common": {
+			"AlternativeAuthDivider": {
+				"or": "LUB"
 			},
-			"bottomContent": {
-				"facebookLogin": "Zaloguj się przez Facebooka",
-				"forgotPassword": "Nie pamiętasz hasła?"
+			"ReportUnlawfulContent": {
+				"content": "Możesz też <link>zgłosić zawartość, którą uważasz za niezgodną z prawem</link> obowiązującym w Twoim kraju bez logowania się."
 			}
 		},
-		"CreateAccountAuthBox": {
-			"content": "Nie masz konta? <link>Zarejestruj się</link>"
-		},
-		"SignUpAuthBox": {
-			"steps": {
-				"previous": "Wróć",
-				"next": "Dalej"
+		"sign-in": {
+			"CreateAccountAuthBox": {
+				"content": "Nie masz konta? <link>Zarejestruj się</link>"
 			},
-			"form": {
-				"upsideContent": {
-					"title": "Zarejestruj się, aby przeglądać zdjęcia i filmy znajomych.",
-					"facebookLogin": "Zaloguj się przez Facebooka"
+			"SignInAuthBox": {
+				"form": {
+					"login": "Nazwa użytkownika lub adres e-mail",
+					"password": "Hasło",
+					"submit": "Zaloguj się"
+				},
+				"bottomContent": {
+					"facebookLogin": "Zaloguj się przez Facebooka",
+					"forgotPassword": "Nie pamiętasz hasła?"
+				}
+			}
+		},
+		"sign-up": {
+			"LogInToAccountAuthBox": {
+				"content": "Masz konto? <link>Zaloguj się</link>"
+			},
+			"SignUpAuthBox": {
+				"steps": {
+					"previous": "Wróć",
+					"next": "Dalej"
 				},
 				"form": {
-					"email": "Adres e-mail",
-					"fullName": "Imię i nazwisko",
-					"username": "Nazwa użytkownika",
-					"password": "Hasło",
-					"bottomContent": {
-						"contactInformation": "Osoby korzystające z naszej usługi mogły przesłać Twoje informacje kontaktowe do Instagramu. <link>Dowiedz się więcej</link>",
-						"termsAndPolicy": "Rejestrując się, akceptujesz <terms>Regulamin</terms>. Informacje o tym, jak gromadzimy, wykorzystujemy i udostępniamy Twoje dane, zawierają nasze <privacyPolicy>Zasady dotyczące polityki prywatności</privacyPolicy>. O korzystaniu z plików cookie i podobnych technologii informują <cookiesPolicy>Zasady dotyczące plików cookie</cookiesPolicy>."
+					"upsideContent": {
+						"title": "Zarejestruj się, aby przeglądać zdjęcia i filmy znajomych.",
+						"facebookLogin": "Zaloguj się przez Facebooka"
+					},
+					"form": {
+						"email": "Adres e-mail",
+						"fullName": "Imię i nazwisko",
+						"username": "Nazwa użytkownika",
+						"password": "Hasło",
+						"bottomContent": {
+							"contactInformation": "Osoby korzystające z naszej usługi mogły przesłać Twoje informacje kontaktowe do Instagramu. <link>Dowiedz się więcej</link>",
+							"termsAndPolicy": "Rejestrując się, akceptujesz <terms>Regulamin</terms>. Informacje o tym, jak gromadzimy, wykorzystujemy i udostępniamy Twoje dane, zawierają nasze <privacyPolicy>Zasady dotyczące polityki prywatności</privacyPolicy>. O korzystaniu z plików cookie i podobnych technologii informują <cookiesPolicy>Zasady dotyczące plików cookie</cookiesPolicy>."
+						}
 					}
+				},
+				"birthday": {
+					"title": "Dodaj swoją datę urodzenia",
+					"content": "Nie będzie to częścią Twojego profilu publicznego.",
+					"useOwnBirthday": "Podaj własną datę urodzenia, nawet jeśli jest to konto firmy, zwierzaka lub inne"
+				},
+				"confirmation-code": {
+					"title": "Wprowadź kod potwierdzający",
+					"content": "Wprowadź kod potwierdzający wysłany na adres {email}. <resend-code>Wyślij kod ponownie</resend-code>.",
+					"confirmationCode": "Kod potwierdzający"
 				}
-			},
-			"birthday": {
-				"title": "Dodaj swoją datę urodzenia",
-				"content": "Nie będzie to częścią Twojego profilu publicznego.",
-				"useOwnBirthday": "Podaj własną datę urodzenia, nawet jeśli jest to konto firmy, zwierzaka lub inne"
-			},
-			"confirmation-code": {
-				"title": "Wprowadź kod potwierdzający",
-				"content": "Wprowadź kod potwierdzający wysłany na adres {email}. <resend-code>Wyślij kod ponownie</resend-code>.",
-				"confirmationCode": "Kod potwierdzający"
 			}
 		},
-		"LogInToAccountAuthBox": {
-			"content": "Masz konto? <link>Zaloguj się</link>"
-		},
-		"ReportUnlawfulContent": {
-			"content": "Możesz też <link>zgłosić zawartość, którą uważasz za niezgodną z prawem</link> obowiązującym w Twoim kraju bez logowania się."
-		},
-		"AlternativeAuthDivider": {
-			"or": "LUB"
+		"ui": {
+			"PasswordInput": {
+				"show": "Pokaż",
+				"hide": "Ukryj"
+			}
 		}
 	},
 	"IndexPage": {

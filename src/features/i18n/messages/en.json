@@ -1,59 +1,71 @@
 {
 	"auth": {
-		"SignInAuthBox": {
-			"form": {
-				"login": "Phone number, username, or email",
-				"password": "Password",
-				"submit": "Log in"
+		"common": {
+			"AlternativeAuthDivider": {
+				"or": "OR"
 			},
-			"bottomContent": {
-				"facebookLogin": "Log in with Facebook",
-				"forgotPassword": "Forgot Password?"
+			"ReportUnlawfulContent": {
+				"content": "You can also <link>report content you believe is unlawful</link> in your country without logging in."
 			}
 		},
-		"CreateAccountAuthBox": {
-			"content": "Don't have an account? <link>Sign up</link>"
-		},
-		"SignUpAuthBox": {
-			"steps": {
-				"previous": "Go back",
-				"next": "Next"
+		"sign-in": {
+			"CreateAccountAuthBox": {
+				"content": "Don't have an account? <link>Sign up</link>"
 			},
-			"form": {
-				"upsideContent": {
-					"title": "Sign up to see photos and videos from your friends.",
-					"facebookLogin": "Log in with Facebook"
+			"SignInAuthBox": {
+				"form": {
+					"login": "Username or email",
+					"password": "Password",
+					"submit": "Log in"
+				},
+				"bottomContent": {
+					"facebookLogin": "Log in with Facebook",
+					"forgotPassword": "Forgot Password?"
+				}
+			}
+		},
+		"sign-up": {
+			"LogInToAccountAuthBox": {
+				"content": "Have an account? <link>Log in</link>"
+			},
+			"SignUpAuthBox": {
+				"steps": {
+					"previous": "Go back",
+					"next": "Next"
 				},
 				"form": {
-					"email": "Email address",
-					"fullName": "Full Name",
-					"username": "Username",
-					"password": "Password",
-					"bottomContent": {
-						"contactInformation": "People who use our service may have uploaded your contact information to Instagram. <link>Learn More</link>",
-						"termsAndPolicy": "By signing up, you agree to our <terms>Terms</terms>. Learn how we collect, use and share your data in our <privacyPolicy>Privacy Policy</privacyPolicy> and how we use cookies and similar technology in our <cookiesPolicy>Cookies Policy</cookiesPolicy>."
+					"upsideContent": {
+						"title": "Sign up to see photos and videos from your friends.",
+						"facebookLogin": "Log in with Facebook"
+					},
+					"form": {
+						"email": "Email address",
+						"fullName": "Full Name",
+						"username": "Username",
+						"password": "Password",
+						"bottomContent": {
+							"contactInformation": "People who use our service may have uploaded your contact information to Instagram. <link>Learn More</link>",
+							"termsAndPolicy": "By signing up, you agree to our <terms>Terms</terms>. Learn how we collect, use and share your data in our <privacyPolicy>Privacy Policy</privacyPolicy> and how we use cookies and similar technology in our <cookiesPolicy>Cookies Policy</cookiesPolicy>."
+						}
 					}
+				},
+				"birthday": {
+					"title": "Add Your Birthday",
+					"content": "This won't be a part of your public profile.",
+					"useOwnBirthday": "Use your own birthday, even if this account is for a business, a pet, or something else"
+				},
+				"confirmation-code": {
+					"title": "Enter Confirmation Code",
+					"content": "Enter the confirmation code we sent to {email}. <resend-code>Resend Code</resend-code>.",
+					"confirmationCode": "Confirmation Code"
 				}
-			},
-			"birthday": {
-				"title": "Add Your Birthday",
-				"content": "This won't be a part of your public profile.",
-				"useOwnBirthday": "Use your own birthday, even if this account is for a business, a pet, or something else"
-			},
-			"confirmation-code": {
-				"title": "Enter Confirmation Code",
-				"content": "Enter the confirmation code we sent to {email}. <resend-code>Resend Code</resend-code>.",
-				"confirmationCode": "Confirmation Code"
 			}
 		},
-		"LogInToAccountAuthBox": {
-			"content": "Have an account? <link>Log in</link>"
-		},
-		"ReportUnlawfulContent": {
-			"content": "You can also <link>report content you believe is unlawful</link> in your country without logging in."
-		},
-		"AlternativeAuthDivider": {
-			"or": "OR"
+		"ui": {
+			"PasswordInput": {
+				"show": "Show",
+				"hide": "Hide"
+			}
 		}
 	},
 	"IndexPage": {

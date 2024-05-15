@@ -5,7 +5,7 @@ import { ReportUnlawfulContent } from '../../../common/ReportUnlawfulContent';
 import { SignInAuthBoxBottomContentFacebookButton } from './SignInAuthBoxBottomContentFacebookButton';
 
 export const SignInAuthBoxBottomContent = () => {
-	const t = useTranslations('auth.SignInAuthBox.bottomContent');
+	const t = useTranslations('auth.sign-in.SignInAuthBox.bottomContent');
 
 	return (
 		<div className="flex flex-col items-center gap-5">

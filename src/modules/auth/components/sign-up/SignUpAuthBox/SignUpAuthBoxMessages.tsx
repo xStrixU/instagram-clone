@@ -16,9 +16,9 @@ export const SignUpAuthBoxMessages = ({
 		<NextIntlClientProvider
 			messages={pick(
 				messages,
-				'auth.SignUpAuthBox',
-				'auth.ReportUnlawfulContent',
-				'auth.AlternativeAuthDivider',
+				'auth.common',
+				'auth.sign-up.SignUpAuthBox',
+				'auth.ui',
 			)}
 		>
 			{children}

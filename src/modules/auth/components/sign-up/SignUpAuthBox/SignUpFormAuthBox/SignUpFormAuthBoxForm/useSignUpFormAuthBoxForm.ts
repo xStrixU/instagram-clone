@@ -25,7 +25,7 @@ export const useSignUpFormAuthBoxForm = ({
 			...formData,
 		},
 	});
-	const t = useTranslations('auth.SignUpAuthBox.form.form');
+	const t = useTranslations('auth.sign-up.SignUpAuthBox.form.form');
 
 	const onSubmit = handleSubmit(data => {
 		setFormData(data);
