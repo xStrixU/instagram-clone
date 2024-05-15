@@ -15,7 +15,7 @@ export const useSignUpBirthdayAuthBoxForm = ({
 	const { birthDate, dispatchBirthDate } =
 		useSignUpBirthdayAuthBoxFormBirthDate();
 	const { setBirthDate } = useSignUpAuthBoxContext();
-	const t = useTranslations('auth.SignUpAuthBox.birthday');
+	const t = useTranslations('auth.sign-up.SignUpAuthBox.birthday');
 
 	const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
 		event.preventDefault();

@@ -15,7 +15,7 @@ export const useSignInAuthBoxForm = () => {
 			password: '',
 		},
 	});
-	const t = useTranslations('auth.SignInAuthBox.form');
+	const t = useTranslations('auth.sign-in.SignInAuthBox.form');
 
 	const onSubmit = handleSubmit(data => {
 		console.log({ data });

@@ -14,7 +14,7 @@ export const SignInAuthBoxFormMessages = ({
 
 	return (
 		<NextIntlClientProvider
-			messages={pick(messages, 'auth.SignInAuthBox.form')}
+			messages={pick(messages, 'auth.sign-in.SignInAuthBox.form', 'auth.ui')}
 		>
 			{children}
 		</NextIntlClientProvider>

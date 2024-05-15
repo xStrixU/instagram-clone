@@ -11,7 +11,7 @@ type CreateAccountAuthBoxProps = Readonly<{
 export const CreateAccountAuthBox = ({
 	className,
 }: CreateAccountAuthBoxProps) => {
-	const t = useTranslations('auth.CreateAccountAuthBox');
+	const t = useTranslations('auth.sign-in.CreateAccountAuthBox');
 
 	return (
 		<AuthBox className={className}>

@@ -3,7 +3,7 @@ import { forwardRef } from 'react';
 
 export const SignUpConfirmationCodeAuthBoxFormInput =
 	forwardRef<HTMLInputElement>((props, ref) => {
-		const t = useTranslations('auth.SignUpAuthBox.confirmation-code');
+		const t = useTranslations('auth.sign-up.SignUpAuthBox.confirmation-code');
 
 		return (
 			<input

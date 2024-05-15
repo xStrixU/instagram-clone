@@ -3,7 +3,7 @@ import { useTranslations } from 'next-intl';
 import FacebookIcon from '@/modules/auth/assets/icons/facebook.svg';
 
 export const SignInAuthBoxBottomContentFacebookButton = () => {
-	const t = useTranslations('auth.SignInAuthBox.bottomContent');
+	const t = useTranslations('auth.sign-in.SignInAuthBox.bottomContent');
 
 	return (
 		<button

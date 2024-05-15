@@ -1,11 +1,10 @@
 import { useTranslations } from 'next-intl';
 
-import { Button } from '../../../../ui/Button/Button';
-
 import FacebookTransparentIcon from '@/modules/auth/assets/icons/facebook-transparent.svg';
+import { Button } from '@/modules/auth/components/ui/Button/Button';
 
 export const SignUpFormAuthBoxUpsideContentFacebookButton = () => {
-	const t = useTranslations('auth.SignUpAuthBox.form.upsideContent');
+	const t = useTranslations('auth.sign-up.SignUpAuthBox.form.upsideContent');
 
 	return (
 		<Button>

@@ -3,7 +3,7 @@ import { useTranslations } from 'next-intl';
 import { InfoText } from './InfoText/InfoText';
 
 export const ReportUnlawfulContent = () => {
-	const t = useTranslations('auth.ReportUnlawfulContent');
+	const t = useTranslations('auth.common.ReportUnlawfulContent');
 
 	return (
 		<InfoText>

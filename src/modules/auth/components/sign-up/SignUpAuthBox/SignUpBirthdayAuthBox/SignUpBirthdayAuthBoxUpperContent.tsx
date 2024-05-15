@@ -1,7 +1,7 @@
 import { useTranslations } from 'next-intl';
 
 export const SignUpBirthdayAuthBoxUpperContent = () => {
-	const t = useTranslations('auth.SignUpAuthBox.birthday');
+	const t = useTranslations('auth.sign-up.SignUpAuthBox.birthday');
 
 	return (
 		<>
