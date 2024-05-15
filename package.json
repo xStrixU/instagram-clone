@@ -6,16 +6,22 @@
 	"author": "Kacper Polak <kacper.polak10@gmail.com>",
 	"scripts": {
 		"prepare": "husky",
-		"dev": "next dev",
-		"build": "next build",
-		"start": "next start",
-		"lint": "next lint",
+		"postinstall": "prisma generate",
+		"dev": "concurrently --kill-others-on-fail \"bun database:dev\" \"wait-on tcp:5432 && bun prisma:migrate:dev && bun next:dev\"",
 		"test": "vitest",
-		"storybook": "storybook dev -p 6006",
-		"build-storybook": "storybook build"
+		"next:dev": "next dev",
+		"next:build": "next build",
+		"next:start": "next start",
+		"next:lint": "next lint",
+		"prisma:migrate:dev": "dotenv -e .env.development.local -- prisma migrate dev",
+		"prisma:studio:dev": "dotenv -e .env.development.local -- prisma studio",
+		"database:dev": "docker compose up database",
+		"storybook:dev": "storybook dev -p 6006",
+		"storybook:build": "storybook build"
 	},
 	"dependencies": {
 		"@hookform/resolvers": "3.4.0",
+		"@prisma/client": "5.14.0",
 		"@t3-oss/env-nextjs": "^0.10.1",
 		"lodash": "4.17.21",
 		"next": "14.2.3",
@@ -50,6 +56,8 @@
 		"@typescript-eslint/eslint-plugin": "7.9.0",
 		"@typescript-eslint/parser": "7.9.0",
 		"autoprefixer": "10.4.19",
+		"concurrently": "^8.2.2",
+		"dotenv-cli": "^7.4.2",
 		"eslint": "8.57.0",
 		"eslint-config-next": "14.2.3",
 		"eslint-config-prettier": "9.1.0",
@@ -64,8 +72,10 @@
 		"postcss": "8.4.38",
 		"prettier": "3.2.5",
 		"prettier-plugin-tailwindcss": "0.5.14",
+		"prisma": "^5.14.0",
 		"storybook": "8.1.1",
 		"tailwindcss": "3.4.3",
-		"typescript": "5.4.5"
+		"typescript": "5.4.5",
+		"wait-on": "^7.2.0"
 	}
 }
