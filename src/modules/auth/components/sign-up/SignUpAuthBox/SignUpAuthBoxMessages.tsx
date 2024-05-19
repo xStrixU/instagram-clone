@@ -19,6 +19,7 @@ export const SignUpAuthBoxMessages = ({
 				'auth.common',
 				'auth.sign-up.SignUpAuthBox',
 				'auth.ui',
+				'errors',
 			)}
 		>
 			{children}

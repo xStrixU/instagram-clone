@@ -15,6 +15,7 @@ export default {
 				},
 			},
 			colors: {
+				error: 'rgb(var(--error) / <alpha-value>)',
 				facebook: 'rgb(var(--facebook) / <alpha-value>)',
 				link: 'rgb(var(--link) / <alpha-value>)',
 				separator: 'rgb(var(--separator) / <alpha-value>)',
@@ -31,8 +32,17 @@ export default {
 				primary: 'rgb(var(--text-primary) / <alpha-value>)',
 				secondary: 'rgb(var(--text-secondary) / <alpha-value>)',
 			},
+			animation: {
+				loading: 'loading .8s infinite steps(8, end)',
+			},
 			fontFamily: {
 				sans: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif',
+			},
+			keyframes: {
+				loading: {
+					'0%': { transform: 'rotate(180deg)' },
+					'100%': { transform: 'rotate(540deg)' },
+				},
 			},
 			screens: {
 				xs: '450px',
