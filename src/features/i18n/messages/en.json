@@ -68,6 +68,18 @@
 			}
 		}
 	},
+	"errors": {
+		"auth": {
+			"sign-up": {
+				"email": "Another account is using the same email.",
+				"username": "Another account is using the same username."
+			}
+		},
+		"common": {
+			"payload": "Invalid request payload.",
+			"unexpected": "Something went wrong. Please try again later."
+		}
+	},
 	"IndexPage": {
 		"title": "Index Page"
 	}

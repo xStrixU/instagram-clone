@@ -1,8 +1,8 @@
 import { Controller } from 'react-hook-form';
 
 import { SignUpAuthBoxNextButton } from '../../SignUpAuthBoxNextButton';
+import { useSignUpFormAuthBoxForm } from './hooks/useSignUpFormAuthBoxForm';
 import { SignUpFormAuthBoxFormBottomContent } from './SignUpFormAuthBoxFormBottomContent';
-import { useSignUpFormAuthBoxForm } from './useSignUpFormAuthBoxForm';
 
 import { Input } from '@/modules/auth/components/ui/Input/Input';
 import { PasswordInput } from '@/modules/auth/components/ui/PasswordInput/PasswordInput';
@@ -14,17 +14,29 @@ type SignUpFormAuthBoxFormProps = Pick<StepsProps, 'nextStep'>;
 export const SignUpFormAuthBoxForm = ({
 	nextStep,
 }: SignUpFormAuthBoxFormProps) => {
-	const { register, onSubmit, control, dirtyFields, errors, isValid, t } =
-		useSignUpFormAuthBoxForm({ nextStep });
+	const {
+		register,
+		onSubmit,
+		validateField,
+		control,
+		dirtyFields,
+		errors,
+		isValid,
+		validatedFields,
+		isServerValidated,
+		t,
+	} = useSignUpFormAuthBoxForm({ nextStep });
 
 	return (
 		<form onSubmit={onSubmit} className="flex w-full flex-col gap-1.5">
 			<Input
 				autoComplete="email"
 				placeholder={t('email')}
-				validate={dirtyFields.email}
+				validate={validatedFields.email}
 				isValid={!errors.email}
-				{...register('email')}
+				{...register('email', {
+					onChange: () => validateField('email'),
+				})}
 			/>
 			<Input
 				placeholder={t('fullName')}
@@ -35,9 +47,11 @@ export const SignUpFormAuthBoxForm = ({
 			<Input
 				autoComplete="username"
 				placeholder={t('username')}
-				validate={dirtyFields.username}
+				validate={validatedFields.username}
 				isValid={!errors.username}
-				{...register('username')}
+				{...register('username', {
+					onChange: () => validateField('username'),
+				})}
 			/>
 			<Controller
 				name="password"
@@ -54,7 +68,10 @@ export const SignUpFormAuthBoxForm = ({
 			/>
 			<SignUpFormAuthBoxFormBottomContent />
 			<div className="mt-2">
-				<SignUpAuthBoxNextButton type="submit" disabled={!isValid} />
+				<SignUpAuthBoxNextButton
+					type="submit"
+					disabled={!isServerValidated || !isValid}
+				/>
 			</div>
 		</form>
 	);

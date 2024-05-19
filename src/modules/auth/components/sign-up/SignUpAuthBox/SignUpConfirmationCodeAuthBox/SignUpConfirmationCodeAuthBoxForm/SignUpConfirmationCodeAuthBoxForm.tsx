@@ -1,15 +1,19 @@
-import { SignUpAuthBoxNextButton } from '../../SignUpAuthBoxNextButton';
+import { SignUpConfirmationCodeAuthBoxFormDataInputs } from './SignUpConfirmationCodeAuthBoxFormDataInputs';
 import { SignUpConfirmationCodeAuthBoxFormInput } from './SignUpConfirmationCodeAuthBoxFormInput';
+import { SignUpConfirmationCodeAuthBoxFormSubmitButton } from './SignUpConfirmationCodeAuthBoxFormSubmitButton';
 import { useSignUpConfirmationCodeAuthBoxForm } from './useSignUpConfirmationCodeAuthBoxForm';
 
 export const SignUpConfirmationCodeAuthBoxForm = () => {
-	const { register, onSubmit, isValid } =
+	const { register, isValid, signUpFormAction } =
 		useSignUpConfirmationCodeAuthBoxForm();
 
 	return (
-		<form onSubmit={onSubmit} className="flex w-full flex-col gap-4">
-			<SignUpConfirmationCodeAuthBoxFormInput {...register('code')} />
-			<SignUpAuthBoxNextButton type="submit" disabled={!isValid} />
+		<form action={signUpFormAction} className="flex w-full flex-col gap-4">
+			<SignUpConfirmationCodeAuthBoxFormDataInputs />
+			<SignUpConfirmationCodeAuthBoxFormInput
+				{...register('confirmationCode')}
+			/>
+			<SignUpConfirmationCodeAuthBoxFormSubmitButton disabled={!isValid} />
 		</form>
 	);
 };

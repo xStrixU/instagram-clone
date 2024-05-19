@@ -1,8 +1,8 @@
 import Image from 'next/image';
 
 import { AuthBox } from '../../../common/AuthBox';
-import { ReportUnlawfulContent } from '../../../common/ReportUnlawfulContent';
 import { SignUpAuthBoxGoBackButton } from '../SignUpAuthBoxGoBackButton';
+import { SignUpConfirmationCodeAuthBoxBottomContent } from './SignUpConfirmationCodeAuthBoxBottomContent/SignUpConfirmationCodeAuthBoxBottomContent';
 import { SignUpConfirmationCodeAuthBoxForm } from './SignUpConfirmationCodeAuthBoxForm/SignUpConfirmationCodeAuthBoxForm';
 import { SignUpConfirmationCodeAuthBoxUpperContent } from './SignUpConfirmationCodeAuthBoxUpperContent/SignUpConfirmationCodeAuthBoxUpperContent';
 
@@ -26,6 +26,6 @@ export const SignUpConfirmationCodeAuthBox = ({
 		<SignUpConfirmationCodeAuthBoxUpperContent />
 		<SignUpConfirmationCodeAuthBoxForm />
 		<SignUpAuthBoxGoBackButton onClick={previousStep} />
-		<ReportUnlawfulContent />
+		<SignUpConfirmationCodeAuthBoxBottomContent />
 	</AuthBox>
 );

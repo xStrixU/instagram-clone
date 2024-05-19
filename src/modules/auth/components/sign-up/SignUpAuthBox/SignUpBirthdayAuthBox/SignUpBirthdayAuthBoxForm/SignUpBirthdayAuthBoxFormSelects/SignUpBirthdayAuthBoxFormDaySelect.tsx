@@ -10,6 +10,7 @@ type SignUpBirthdayAuthBoxFormDaySelectProps = Readonly<{
 export const SignUpBirthdayAuthBoxFormDaySelect = ({
 	year,
 	month,
+	setDay,
 }: SignUpBirthdayAuthBoxFormDaySelectProps) => {
 	const days = getDaysInMonth(year, month);
 	const options = days.map(day => ({
@@ -17,5 +18,10 @@ export const SignUpBirthdayAuthBoxFormDaySelect = ({
 		children: day,
 	}));
 
-	return <Select options={options} />;
+	return (
+		<Select
+			options={options}
+			onChange={({ target }) => setDay(Number.parseInt(target.value))}
+		/>
+	);
 };
