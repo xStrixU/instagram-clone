@@ -3,18 +3,23 @@ import { NextIntlClientProvider, useMessages } from 'next-intl';
 
 import type { ReactNode } from 'react';
 
-type SignInAuthBoxFormMessagesProps = Readonly<{
+type SignInAuthBoxMessagesProps = Readonly<{
 	children: ReactNode;
 }>;
 
-export const SignInAuthBoxFormMessages = ({
+export const SignInAuthBoxMessages = ({
 	children,
-}: SignInAuthBoxFormMessagesProps) => {
+}: SignInAuthBoxMessagesProps) => {
 	const messages = useMessages();
 
 	return (
 		<NextIntlClientProvider
-			messages={pick(messages, 'auth.sign-in.SignInAuthBox.form', 'auth.ui')}
+			messages={pick(
+				messages,
+				'auth.sign-in.SignInAuthBox.form',
+				'auth.ui',
+				'errors',
+			)}
 		>
 			{children}
 		</NextIntlClientProvider>

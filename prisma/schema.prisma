@@ -8,12 +8,22 @@ generator client {
 }
 
 model User {
-  id       String   @id @default(cuid())
-  fullName String   @map("full_name")
-  username String   @unique
-  email    String   @unique
+  id       String    @id @default(cuid())
+  fullName String    @map("full_name")
+  username String    @unique
+  email    String    @unique
   password String
   birthday DateTime
+  sessions Session[]
 
   @@map("users")
+}
+
+model Session {
+  id        String   @id
+  userId    String   @map("user_id")
+  expiresAt DateTime @map("expires_at")
+  user      User     @relation(references: [id], fields: [userId], onDelete: Cascade)
+
+  @@map("sessions")
 }

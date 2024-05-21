@@ -68,6 +68,21 @@
 			}
 		}
 	},
+	"errors": {
+		"auth": {
+			"sign-in": {
+				"credentials": "Niestety, wprowadzone hasło jest nieprawidłowe. Sprawdź poprawność wpisanego hasła."
+			},
+			"sign-up": {
+				"email": "Inne konto już używa tego adres email.",
+				"username": "Inne konto już używa tej nazwy użytkownika."
+			}
+		},
+		"common": {
+			"payload": "Niepoprawna treść żądania.",
+			"unexpected": "Coś poszło nie tak. Spróbuj ponownie później."
+		}
+	},
 	"IndexPage": {
 		"title": "Strona Główna"
 	}

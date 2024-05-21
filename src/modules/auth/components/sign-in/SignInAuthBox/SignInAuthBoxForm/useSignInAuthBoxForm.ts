@@ -1,5 +1,6 @@
 import { useTranslations } from 'next-intl';
 
+import { useSignInAuthBoxContext } from '../SignInAuthBox.provider';
 import { signInAuthBoxFormSchema } from './SignInAuthBoxForm.schema';
 
 import { useZodForm } from '@/common/hooks/useZodForm';
@@ -7,7 +8,6 @@ import { useZodForm } from '@/common/hooks/useZodForm';
 export const useSignInAuthBoxForm = () => {
 	const {
 		register,
-		handleSubmit,
 		control,
 		formState: { isValid },
 	} = useZodForm(signInAuthBoxFormSchema, {
@@ -16,10 +16,7 @@ export const useSignInAuthBoxForm = () => {
 		},
 	});
 	const t = useTranslations('auth.sign-in.SignInAuthBox.form');
+	const { signInFormAction } = useSignInAuthBoxContext();
 
-	const onSubmit = handleSubmit(data => {
-		console.log({ data });
-	});
-
-	return { register, onSubmit, control, isValid, t };
+	return { register, control, isValid, signInFormAction, t };
 };

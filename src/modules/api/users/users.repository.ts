@@ -50,3 +50,10 @@ export const create = async ({
 
 export const getAll = (input: Partial<UserInput> = {}): Promise<User[]> =>
 	prisma.user.findMany({ where: input });
+
+export const findByLogin = (login: string): Promise<User | null> =>
+	prisma.user.findFirst({
+		where: {
+			OR: [{ username: { equals: login } }, { email: { equals: login } }],
+		},
+	});

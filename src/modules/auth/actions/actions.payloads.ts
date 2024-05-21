@@ -1,6 +1,11 @@
 import { z } from 'zod';
 import { zfd } from 'zod-form-data';
 
+export const signInPayloadSchema = zfd.formData({
+	login: zfd.text(),
+	password: zfd.text(),
+});
+
 export const signUpPayloadSchema = zfd.formData({
 	confirmationCode: zfd.text(),
 	fullName: zfd.text(z.string().min(1)),
