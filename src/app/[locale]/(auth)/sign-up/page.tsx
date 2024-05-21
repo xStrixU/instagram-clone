@@ -2,7 +2,7 @@ import { unstable_setRequestLocale } from 'next-intl/server';
 
 import { LogInToAccountAuthBox } from '@/modules/auth/components/sign-up/LogInToAccountAuthBox';
 import { SignUpAuthBox } from '@/modules/auth/components/sign-up/SignUpAuthBox/SignUpAuthBox';
-import { SignUpAuthBoxMessages } from '@/modules/auth/components/sign-up/SignUpAuthBox/SignUpAuthBoxMessages';
+import { SignUpAuthBoxMessages } from '@/modules/auth/components/sign-up/SignUpAuthBox/SignUpAuthBox.messages';
 
 import type { LocaleParams } from '@/features/i18n/types/i18n.types';
 

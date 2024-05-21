@@ -2,17 +2,18 @@
 
 import { Controller } from 'react-hook-form';
 
+import { SignInAuthBoxFormSubmitButton } from './SignInAuthBoxFormSubmitButton';
 import { useSignInAuthBoxForm } from './useSignInAuthBoxForm';
 
-import { Button } from '@/modules/auth/components/ui/Button/Button';
 import { Input } from '@/modules/auth/components/ui/Input/Input';
 import { PasswordInput } from '@/modules/auth/components/ui/PasswordInput/PasswordInput';
 
 export const SignInAuthBoxForm = () => {
-	const { register, onSubmit, control, isValid, t } = useSignInAuthBoxForm();
+	const { register, control, isValid, signInFormAction, t } =
+		useSignInAuthBoxForm();
 
 	return (
-		<form onSubmit={onSubmit} className="flex w-full flex-col gap-1.5">
+		<form action={signInFormAction} className="flex w-full flex-col gap-1.5">
 			<Input
 				autoComplete="username"
 				placeholder={t('login')}
@@ -30,9 +31,7 @@ export const SignInAuthBoxForm = () => {
 				)}
 			/>
 			<div className="mt-2">
-				<Button type="submit" disabled={!isValid}>
-					{t('submit')}
-				</Button>
+				<SignInAuthBoxFormSubmitButton disabled={!isValid} />
 			</div>
 		</form>
 	);

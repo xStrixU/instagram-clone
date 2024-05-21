@@ -45,3 +45,6 @@ export type GetAllUsersInput = Partial<UserInput>;
 
 export const getAll = (input: GetAllUsersInput) =>
 	usersRepository.getAll(input);
+
+export const findByLogin = (login: string) =>
+	usersRepository.findByLogin(login);

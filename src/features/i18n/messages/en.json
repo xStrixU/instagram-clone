@@ -70,6 +70,9 @@
 	},
 	"errors": {
 		"auth": {
+			"sign-in": {
+				"credentials": "Sorry, your password was incorrect. Please double-check your password."
+			},
 			"sign-up": {
 				"email": "Another account is using the same email.",
 				"username": "Another account is using the same username."
