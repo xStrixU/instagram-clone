@@ -4,7 +4,9 @@ import { Button } from '../../ui/Button/Button';
 
 import type { ComponentProps } from 'react';
 
-type SignUpAuthBoxNextButtonProps = Omit<
+import type { DistributiveOmit } from '@/common/types/utils.types';
+
+type SignUpAuthBoxNextButtonProps = DistributiveOmit<
 	ComponentProps<typeof Button>,
 	'children'
 >;

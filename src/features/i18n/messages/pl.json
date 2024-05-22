@@ -25,6 +25,12 @@
 			}
 		},
 		"sign-up": {
+			"form": {
+				"email": "Adres e-mail",
+				"fullName": "Imię i nazwisko",
+				"username": "Nazwa użytkownika",
+				"password": "Hasło"
+			},
 			"LogInToAccountAuthBox": {
 				"content": "Masz konto? <link>Zaloguj się</link>"
 			},
@@ -39,10 +45,6 @@
 						"facebookLogin": "Zaloguj się przez Facebooka"
 					},
 					"form": {
-						"email": "Adres e-mail",
-						"fullName": "Imię i nazwisko",
-						"username": "Nazwa użytkownika",
-						"password": "Hasło",
 						"bottomContent": {
 							"contactInformation": "Osoby korzystające z naszej usługi mogły przesłać Twoje informacje kontaktowe do Instagramu. <link>Dowiedz się więcej</link>",
 							"termsAndPolicy": "Rejestrując się, akceptujesz <terms>Regulamin</terms>. Informacje o tym, jak gromadzimy, wykorzystujemy i udostępniamy Twoje dane, zawierają nasze <privacyPolicy>Zasady dotyczące polityki prywatności</privacyPolicy>. O korzystaniu z plików cookie i podobnych technologii informują <cookiesPolicy>Zasady dotyczące plików cookie</cookiesPolicy>."
@@ -58,6 +60,12 @@
 					"title": "Wprowadź kod potwierdzający",
 					"content": "Wprowadź kod potwierdzający wysłany na adres {email}. <resend-code>Wyślij kod ponownie</resend-code>.",
 					"confirmationCode": "Kod potwierdzający"
+				}
+			},
+			"SignUpOAuthAuthBoxForm": {
+				"form": {
+					"termsAndPolicy": "Rejestracja oznacza zgodę na nasze <terms>Regulamin</terms> i <privacyPolicy>Zasady ochrony prywatności</privacyPolicy>.",
+					"submit": "Zarejestruj się"
 				}
 			}
 		},

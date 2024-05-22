@@ -1,10 +1,10 @@
 import { useTranslations } from 'next-intl';
 
-import { useSignUpAuthBoxContext } from '../../../SignUpAuthBox.provider';
-import { signUpFormAuthBoxFormSchema } from '../SignUpFormAuthBoxForm.schema';
-import { useSignUpFormAuthBoxFormServerValidation } from './useSignUpFormAuthBoxFormServerValidation';
+import { useSignUpAuthBoxContext } from '../../SignUpAuthBox.provider';
+import { signUpFormAuthBoxFormSchema } from './SignUpFormAuthBoxForm.schema';
 
 import { useZodForm } from '@/common/hooks/useZodForm';
+import { useSignUpFormServerValidation } from '@/modules/auth/hooks/useSignUpFormServerValidation';
 
 interface UseSignUpFormAuthBoxFormInput {
 	nextStep: () => void;
@@ -31,13 +31,15 @@ export const useSignUpFormAuthBoxForm = ({
 		},
 	});
 	const { validatedFields, isServerValidated, validateField } =
-		useSignUpFormAuthBoxFormServerValidation({
+		useSignUpFormServerValidation({
+			fields: ['username', 'email'],
+			delay: 500,
 			validateClient: trigger,
 			getValue: field => getValues(field),
 			onSuccess: field => clearErrors(field),
 			onError: field => setError(field, { type: 'custom' }),
 		});
-	const t = useTranslations('auth.sign-up.SignUpAuthBox.form.form');
+	const t = useTranslations('auth.sign-up.form');
 
 	const onSubmit = handleSubmit(data => {
 		setFormData(data);

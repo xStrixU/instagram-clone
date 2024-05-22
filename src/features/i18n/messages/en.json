@@ -25,6 +25,12 @@
 			}
 		},
 		"sign-up": {
+			"form": {
+				"email": "Email address",
+				"fullName": "Full Name",
+				"username": "Username",
+				"password": "Password"
+			},
 			"LogInToAccountAuthBox": {
 				"content": "Have an account? <link>Log in</link>"
 			},
@@ -39,10 +45,6 @@
 						"facebookLogin": "Log in with Facebook"
 					},
 					"form": {
-						"email": "Email address",
-						"fullName": "Full Name",
-						"username": "Username",
-						"password": "Password",
 						"bottomContent": {
 							"contactInformation": "People who use our service may have uploaded your contact information to Instagram. <link>Learn More</link>",
 							"termsAndPolicy": "By signing up, you agree to our <terms>Terms</terms>. Learn how we collect, use and share your data in our <privacyPolicy>Privacy Policy</privacyPolicy> and how we use cookies and similar technology in our <cookiesPolicy>Cookies Policy</cookiesPolicy>."
@@ -58,6 +60,12 @@
 					"title": "Enter Confirmation Code",
 					"content": "Enter the confirmation code we sent to {email}. <resend-code>Resend Code</resend-code>.",
 					"confirmationCode": "Confirmation Code"
+				}
+			},
+			"SignUpOAuthAuthBoxForm": {
+				"form": {
+					"termsAndPolicy": "By signing up, you agree to our <terms>Terms</terms> & <privacyPolicy>Privacy Policy</privacyPolicy>.",
+					"submit": "Sign up"
 				}
 			}
 		},

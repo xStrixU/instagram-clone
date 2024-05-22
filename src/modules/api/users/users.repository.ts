@@ -12,6 +12,10 @@ interface UserInput {
 	email: string;
 	password: string;
 	birthday: Date;
+	oauth?: {
+		provider: string;
+		accountId: string;
+	};
 }
 
 export const create = async ({
@@ -20,6 +24,7 @@ export const create = async ({
 	email,
 	password,
 	birthday,
+	oauth,
 }: UserInput): Promise<User> => {
 	try {
 		const user = await prisma.user.create({
@@ -29,6 +34,14 @@ export const create = async ({
 				email,
 				password,
 				birthday,
+				...(oauth && {
+					accounts: {
+						create: {
+							provider: oauth.provider,
+							accountId: oauth.accountId,
+						},
+					},
+				}),
 			},
 		});
 
@@ -55,5 +68,25 @@ export const findByLogin = (login: string): Promise<User | null> =>
 	prisma.user.findFirst({
 		where: {
 			OR: [{ username: { equals: login } }, { email: { equals: login } }],
+		},
+	});
+
+interface FindByOAuthAccountInput {
+	provider: string;
+	accountId: string;
+}
+
+export const findByOAuthAccount = ({
+	provider,
+	accountId,
+}: FindByOAuthAccountInput): Promise<User | null> =>
+	prisma.user.findFirst({
+		where: {
+			accounts: {
+				some: {
+					provider,
+					accountId,
+				},
+			},
 		},
 	});

@@ -1,8 +1,8 @@
 import { Controller } from 'react-hook-form';
 
 import { SignUpAuthBoxNextButton } from '../../SignUpAuthBoxNextButton';
-import { useSignUpFormAuthBoxForm } from './hooks/useSignUpFormAuthBoxForm';
 import { SignUpFormAuthBoxFormBottomContent } from './SignUpFormAuthBoxFormBottomContent';
+import { useSignUpFormAuthBoxForm } from './useSignUpFormAuthBoxForm';
 
 import { Input } from '@/modules/auth/components/ui/Input/Input';
 import { PasswordInput } from '@/modules/auth/components/ui/PasswordInput/PasswordInput';
