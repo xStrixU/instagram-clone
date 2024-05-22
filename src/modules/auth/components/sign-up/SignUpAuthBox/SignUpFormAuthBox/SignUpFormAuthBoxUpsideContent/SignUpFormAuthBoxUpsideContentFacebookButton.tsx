@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { useTranslations } from 'next-intl';
 
 import FacebookTransparentIcon from '@/modules/auth/assets/icons/facebook-transparent.svg';
@@ -7,9 +8,11 @@ export const SignUpFormAuthBoxUpsideContentFacebookButton = () => {
 	const t = useTranslations('auth.sign-up.SignUpAuthBox.form.upsideContent');
 
 	return (
-		<Button>
-			<FacebookTransparentIcon aria-hidden className="mr-2" />
-			{t('facebookLogin')}
+		<Button asChild>
+			<Link href="/api/auth/facebook">
+				<FacebookTransparentIcon aria-hidden className="mr-2" />
+				{t('facebookLogin')}
+			</Link>
 		</Button>
 	);
 };

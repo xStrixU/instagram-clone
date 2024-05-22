@@ -4,12 +4,18 @@ import { UserUnknownError } from './errors/user-unknown-error';
 import * as usersRepository from './users.repository';
 import { hashPassword } from './utils/password.utils';
 
+import type { OAuthProvider } from '../oauth/oauth.providers';
+
 interface UserInput {
 	fullName: string;
 	username: string;
 	email: string;
 	password: string;
 	birthday: Date;
+	oauth?: {
+		provider: OAuthProvider;
+		accountId: string;
+	};
 }
 
 export const create = async ({
@@ -48,3 +54,11 @@ export const getAll = (input: GetAllUsersInput) =>
 
 export const findByLogin = (login: string) =>
 	usersRepository.findByLogin(login);
+
+interface FindByOAuthAccountInput {
+	provider: OAuthProvider;
+	accountId: string;
+}
+
+export const findByOAuthAccount = (input: FindByOAuthAccountInput) =>
+	usersRepository.findByOAuthAccount(input);

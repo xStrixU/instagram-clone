@@ -5,7 +5,11 @@ import { redirect } from 'next/navigation';
 
 import { AuthError } from '../lib/errors';
 import { createSessionCookie } from '../utils/session.utils';
-import { signInPayloadSchema, signUpPayloadSchema } from './actions.payloads';
+import {
+	signInPayloadSchema,
+	signUpOAuthPayloadSchema,
+	signUpPayloadSchema,
+} from './actions.payloads';
 
 import { CommonError } from '@/common/lib/errors';
 import { validateActionPayload } from '@/common/lib/validateActionPayload';
@@ -50,6 +54,39 @@ export const signUp = async (_prevState: unknown, formData: FormData) => {
 		// TODO: validate confirmationCode
 
 		const user = await usersService.create(payload);
+		const session = await sessionsService.create(user);
+
+		createSessionCookie(session);
+	} catch (err) {
+		if (err instanceof UserAlreadyExistsError) {
+			switch (err.target) {
+				case 'email':
+					return { error: AuthError.SignUpEmail };
+				case 'username':
+					return { error: AuthError.SignUpUsername };
+			}
+		}
+
+		return { error: CommonError.Unexpected };
+	}
+
+	redirect('/');
+};
+
+export const signUpOAuth = async (_prevState: unknown, formData: FormData) => {
+	const payload = validateActionPayload(signUpOAuthPayloadSchema, formData);
+
+	if (!payload) {
+		return { error: CommonError.Payload };
+	}
+
+	const { provider, accountId, ...rest } = payload;
+
+	try {
+		const user = await usersService.create({
+			oauth: { provider, accountId },
+			...rest,
+		});
 		const session = await sessionsService.create(user);
 
 		createSessionCookie(session);

@@ -15,8 +15,8 @@ export const useSignInAuthBoxForm = () => {
 			password: '',
 		},
 	});
-	const t = useTranslations('auth.sign-in.SignInAuthBox.form');
 	const { signInFormAction } = useSignInAuthBoxContext();
+	const t = useTranslations('auth.sign-in.SignInAuthBox.form');
 
 	return { register, control, isValid, signInFormAction, t };
 };

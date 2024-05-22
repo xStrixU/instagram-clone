@@ -1,26 +1,23 @@
 import * as usersActions from '@/common/actions/users.actions';
 import { useServerFormValidation } from '@/common/hooks/useServerFormValidation';
 
-const fields = ['username', 'email'] as const;
+import type { UseServerFormValidationInput } from '@/common/hooks/useServerFormValidation';
 
-type Field = (typeof fields)[number];
+type UseSignUpFormServerValidationInput<TField extends string> = {
+	getValue: (field: TField) => string;
+} & Omit<UseServerFormValidationInput<TField>, 'validateServer'>;
 
-interface UseSignUpFormAuthBoxFormServerValidationInput {
-	validateClient: (field: Field) => Promise<boolean>;
-	getValue: (field: Field) => string;
-	onSuccess: (field: Field) => void;
-	onError: (field: Field) => void;
-}
-
-export const useSignUpFormAuthBoxFormServerValidation = ({
+export const useSignUpFormServerValidation = <TField extends string>({
+	fields,
+	delay,
 	validateClient,
 	getValue,
 	onSuccess,
 	onError,
-}: UseSignUpFormAuthBoxFormServerValidationInput) =>
+}: UseSignUpFormServerValidationInput<TField>) =>
 	useServerFormValidation({
 		fields,
-		delay: 500,
+		delay,
 		validateClient,
 		validateServer: async field => {
 			const value = getValue(field);

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useDebouncedCallback } from 'use-debounce';
 
-interface UseServerFormValidationInput<TField extends string> {
+export interface UseServerFormValidationInput<TField extends string> {
 	fields: ReadonlyArray<TField>;
 	delay: number;
 	validateClient: (field: TField) => Promise<boolean>;
