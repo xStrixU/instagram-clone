@@ -76,6 +76,18 @@
 			}
 		}
 	},
+	"layout": {
+		"Sidebar": {
+			"items": {
+				"instagram": "Instagram",
+				"home": "Strona Główna",
+				"search": "Szukaj",
+				"messages": "Wiadomości",
+				"notifications": "Powiadomienia",
+				"create": "Utwórz"
+			}
+		}
+	},
 	"errors": {
 		"auth": {
 			"sign-in": {
@@ -90,8 +102,5 @@
 			"payload": "Niepoprawna treść żądania.",
 			"unexpected": "Coś poszło nie tak. Spróbuj ponownie później."
 		}
-	},
-	"IndexPage": {
-		"title": "Strona Główna"
 	}
 }

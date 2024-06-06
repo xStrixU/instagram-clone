@@ -4,6 +4,8 @@
 	--button-primary: 0 149 246;
 	--button-primary-hover: 24 119 242;
 
+	--hover-overlay: rgba(0, 0, 0, 0.05);
+
 	--separator: 219 219 219;
 	--stroke: 219 219 219;
 	--stroke-focus: 168 168 168;
@@ -16,6 +18,8 @@
 }
 
 :root[data-theme='dark'] {
+	--hover-overlay: rgba(255, 255, 255, 0.1);
+
 	--separator: 38 38 38;
 	--stroke: 85 85 85;
 	--stroke-focus: 85 85 85;
