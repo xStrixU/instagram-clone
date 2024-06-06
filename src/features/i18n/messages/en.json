@@ -76,6 +76,18 @@
 			}
 		}
 	},
+	"layout": {
+		"Sidebar": {
+			"items": {
+				"instagram": "Instagram",
+				"home": "Home",
+				"search": "Search",
+				"messages": "Messages",
+				"notifications": "Notifications",
+				"create": "Create"
+			}
+		}
+	},
 	"errors": {
 		"auth": {
 			"sign-in": {
@@ -90,8 +102,5 @@
 			"payload": "Invalid request payload.",
 			"unexpected": "Something went wrong. Please try again later."
 		}
-	},
-	"IndexPage": {
-		"title": "Index Page"
 	}
 }
