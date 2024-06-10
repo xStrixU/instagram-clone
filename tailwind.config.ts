@@ -20,6 +20,7 @@ export default {
 				facebook: 'rgb(var(--facebook) / <alpha-value>)',
 				link: 'rgb(var(--link) / <alpha-value>)',
 				separator: 'rgb(var(--separator) / <alpha-value>)',
+				'text-primary': 'rgb(var(--text-primary) / <alpha-value>)',
 				button: {
 					primary: {
 						DEFAULT: 'rgb(var(--button-primary) / <alpha-value>)',

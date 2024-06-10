@@ -59,10 +59,13 @@ export const GET = async (
 			});
 		}
 
+		const pictureURL = await oauthService.uploadUserPicture(oauthUser);
+		const newOAuthUser = { ...oauthUser, pictureURL };
+
 		const params = new URLSearchParams();
 
 		params.set(OAUTH_PROVIDER_PARAM, slug);
-		params.set(OAUTH_USER_PARAM, encodeOAuthUser(oauthUser));
+		params.set(OAUTH_USER_PARAM, encodeOAuthUser(newOAuthUser));
 
 		return new Response(null, {
 			status: 302,
