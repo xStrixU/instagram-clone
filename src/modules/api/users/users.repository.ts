@@ -4,7 +4,7 @@ import { prisma } from '../common/database/prisma';
 import { EntityAlreadyExistsError } from '../common/errors/repositories/entity-already-exists-error';
 import { EntityUnknownError } from '../common/errors/repositories/entity-unknown-error';
 
-import type { User } from './users.types';
+import type { UserEntity } from './users.types';
 
 interface UserInput {
 	fullName: string;
@@ -25,7 +25,7 @@ export const create = async ({
 	password,
 	birthday,
 	oauth,
-}: UserInput): Promise<User> => {
+}: UserInput): Promise<UserEntity> => {
 	try {
 		const user = await prisma.user.create({
 			data: {
@@ -61,10 +61,10 @@ export const create = async ({
 	}
 };
 
-export const getAll = (input: Partial<UserInput> = {}): Promise<User[]> =>
+export const getAll = (input: Partial<UserInput> = {}): Promise<UserEntity[]> =>
 	prisma.user.findMany({ where: input });
 
-export const findByLogin = (login: string): Promise<User | null> =>
+export const findByLogin = (login: string): Promise<UserEntity | null> =>
 	prisma.user.findFirst({
 		where: {
 			OR: [{ username: { equals: login } }, { email: { equals: login } }],
@@ -79,7 +79,7 @@ interface FindByOAuthAccountInput {
 export const findByOAuthAccount = ({
 	provider,
 	accountId,
-}: FindByOAuthAccountInput): Promise<User | null> =>
+}: FindByOAuthAccountInput): Promise<UserEntity | null> =>
 	prisma.user.findFirst({
 		where: {
 			accounts: {

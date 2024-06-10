@@ -6,15 +6,20 @@ import createNextIntlPlugin from 'next-intl/plugin';
 const jiti = createJiti(fileURLToPath(import.meta.url));
 const withNextIntl = createNextIntlPlugin('./src/features/i18n/i18n.ts');
 
-jiti('./src/common/lib/env.ts');
+const { env } = jiti('./src/common/lib/env.ts');
+
+const thumbnailURL = new URL(env.THUMBNAIL_ENDPOINT);
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+	experimental: {
+		ppr: true,
+	},
 	images: {
 		remotePatterns: [
 			{
-				protocol: 'https',
-				hostname: 'platform-lookaside.fbsbx.com',
+				protocol: thumbnailURL.protocol.slice(0, -1),
+				hostname: thumbnailURL.hostname,
 			},
 		],
 	},
