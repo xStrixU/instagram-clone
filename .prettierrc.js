@@ -4,5 +4,5 @@ module.exports = {
 	arrowParens: 'avoid',
 	plugins: ['prettier-plugin-tailwindcss'],
 	tailwindConfig: './tailwind.config.ts',
-	tailwindFunctions: ['twJoin'],
+	tailwindFunctions: ['twJoin', 'twMerge'],
 };

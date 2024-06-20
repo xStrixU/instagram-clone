@@ -1,6 +1,6 @@
 import { useTranslations } from 'next-intl';
 
-import { Button } from '../../ui/Button/Button';
+import { Button } from '@/modules/ui/components/Button/Button';
 
 import type { ComponentProps } from 'react';
 
@@ -16,5 +16,9 @@ export const SignUpAuthBoxNextButton = (
 ) => {
 	const t = useTranslations('auth.sign-up.SignUpAuthBox.steps');
 
-	return <Button {...props}>{t('next')}</Button>;
+	return (
+		<Button fullWidth {...props}>
+			{t('next')}
+		</Button>
+	);
 };

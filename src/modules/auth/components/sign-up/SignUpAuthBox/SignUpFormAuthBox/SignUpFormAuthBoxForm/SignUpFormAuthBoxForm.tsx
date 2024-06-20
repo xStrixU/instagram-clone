@@ -4,8 +4,8 @@ import { SignUpAuthBoxNextButton } from '../../SignUpAuthBoxNextButton';
 import { SignUpFormAuthBoxFormBottomContent } from './SignUpFormAuthBoxFormBottomContent';
 import { useSignUpFormAuthBoxForm } from './useSignUpFormAuthBoxForm';
 
-import { Input } from '@/modules/auth/components/ui/Input/Input';
-import { PasswordInput } from '@/modules/auth/components/ui/PasswordInput/PasswordInput';
+import { Input } from '@/modules/ui/components/Input/Input';
+import { PasswordInput } from '@/modules/ui/components/PasswordInput/PasswordInput';
 
 import type { StepsProps } from '../../SignUpAuthBox.steps';
 

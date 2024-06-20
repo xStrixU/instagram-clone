@@ -1,4 +1,4 @@
-import ExpandMoreIcon from '@/common/assets/icons/expand-more.svg';
+import ChevronDownIcon from '@/modules/ui/assets/icons/chevron-down.svg';
 
 import type { ChangeEventHandler, ReactNode } from 'react';
 
@@ -12,7 +12,7 @@ type SelectProps = Readonly<{
 
 export const Select = ({ options, ...props }: SelectProps) => (
 	<div className="relative inline-block w-fit text-secondary">
-		<ExpandMoreIcon
+		<ChevronDownIcon
 			aria-hidden
 			className="pointer-events-none absolute right-2 top-1/2 -translate-y-1/2"
 		/>
