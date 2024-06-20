@@ -1,7 +1,7 @@
 import { useLocale } from 'next-intl';
 
-import { Select } from '@/modules/auth/components/ui/Select/Select';
 import { getMonthNames } from '@/modules/auth/utils/calendar.utils';
+import { Select } from '@/modules/ui/components/Select/Select';
 
 type SignUpBirthdayAuthBoxFormMonthSelectProps = Readonly<{
 	year: number;

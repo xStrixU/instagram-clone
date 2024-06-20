@@ -1,7 +1,7 @@
 import { useSidebarContext } from '../../Sidebar.provider';
 
-import { useEscapeClick } from '@/common/hooks/useEscapeClick';
-import { useOutsideClick } from '@/common/hooks/useOutsideClick';
+import { useEscapeClick } from '@/modules/ui/hooks/useEscapeClick';
+import { useOutsideClick } from '@/modules/ui/hooks/useOutsideClick';
 
 export const useSidebarWrapper = () => {
 	const { containerRef, isCollapsed, setIsCollapsed, setSelectedItem } =

@@ -1,5 +1,5 @@
-import ValidationErrorIcon from '@/modules/auth/assets/icons/validation-error.svg';
-import ValidationSuccessIcon from '@/modules/auth/assets/icons/validation-success.svg';
+import ErrorCircleIcon from '@/modules/ui/assets/icons/error-circle.svg';
+import SuccessCircleIcon from '@/modules/ui/assets/icons/success-circle.svg';
 
 import type { ReactNode } from 'react';
 
@@ -17,9 +17,9 @@ export const InputRightSection = ({
 	<div className="mx-2 flex items-center gap-1.5">
 		{validate &&
 			(isValid ? (
-				<ValidationSuccessIcon aria-hidden />
+				<SuccessCircleIcon aria-hidden />
 			) : (
-				<ValidationErrorIcon aria-hidden />
+				<ErrorCircleIcon aria-hidden />
 			))}
 		{rightSection}
 	</div>

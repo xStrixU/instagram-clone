@@ -1,7 +1,7 @@
 import { useTranslations } from 'next-intl';
 import { useFormStatus } from 'react-dom';
 
-import { Button } from '../../../ui/Button/Button';
+import { Button } from '@/modules/ui/components/Button/Button';
 
 type SignUpOAuthAuthBoxFormSubmitButtonProps = Readonly<{
 	disabled: boolean;

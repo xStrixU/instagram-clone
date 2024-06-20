@@ -1,6 +1,6 @@
 import { useTranslations } from 'next-intl';
 
-import { Button } from '../../ui/Button/Button';
+import { Button } from '@/modules/ui/components/Button/Button';
 
 import type { ComponentProps } from 'react';
 

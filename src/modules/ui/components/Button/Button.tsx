@@ -1,11 +1,11 @@
 import { twJoin } from 'tailwind-merge';
 
-import LoadingIcon from '@/common/assets/icons/loading.svg';
-import { Slot } from '@/common/components/Slot';
+import SpinnerIcon from '@/modules/ui/assets/icons/spinner.svg';
+import { Slot } from '@/modules/ui/components/Slot';
 
 import type { ReactNode } from 'react';
 
-import type { AsChildProps } from '@/common/components/Slot';
+import type { AsChildProps } from '@/modules/ui/components/Slot';
 
 export type ButtonProps = AsChildProps<{
 	type?: 'button' | 'submit';
@@ -29,7 +29,7 @@ export const Button = ({ children, ...props }: ButtonProps) => {
 	return (
 		<button type={type} className={className} {...rest}>
 			{isLoading ? (
-				<LoadingIcon aria-label="Loading" className="animate-loading" />
+				<SpinnerIcon aria-label="Loading" className="animate-loading" />
 			) : (
 				children
 			)}

@@ -1,11 +1,12 @@
 import { Controller } from 'react-hook-form';
 
-import { Input } from '../../../ui/Input/Input';
-import { PasswordInput } from '../../../ui/PasswordInput/PasswordInput';
 import { SignUpOAuthAuthBoxFormDataInputs } from './SignUpOAuthAuthBoxFormDataInputs';
 import { SignUpOAuthAuthBoxFormSubmitButton } from './SignUpOAuthAuthBoxFormSubmitButton';
 import { SignUpOAuthAuthBoxFormTermsAndPrivacy } from './SignUpOAuthAuthBoxFormTermsAndPrivacy';
 import { useSignUpOAuthAuthBoxForm } from './useSignUpOAuthAuthBoxForm';
+
+import { Input } from '@/modules/ui/components/Input/Input';
+import { PasswordInput } from '@/modules/ui/components/PasswordInput/PasswordInput';
 
 import type { OAuthProvider } from '@/modules/api/oauth/oauth.providers';
 import type { OAuthUser } from '@/modules/api/oauth/oauth.schemas';

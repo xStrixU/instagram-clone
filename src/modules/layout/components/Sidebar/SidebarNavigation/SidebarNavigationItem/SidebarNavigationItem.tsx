@@ -3,7 +3,7 @@ import { useTranslations } from 'next-intl';
 import { SidebarNavigationItemIcon } from './SidebarNavigationItemIcon';
 import { SidebarNavigationItemLabel } from './SidebarNavigationItemLabel';
 
-import { Slot } from '@/common/components/Slot';
+import { Slot } from '@/modules/ui/components/Slot';
 
 import type { SidebarNavItemLabel } from './SidebarNavigationItem.types';
 import type { ReactNode } from 'react';

@@ -5,8 +5,8 @@ import { Controller } from 'react-hook-form';
 import { SignInAuthBoxFormSubmitButton } from './SignInAuthBoxFormSubmitButton';
 import { useSignInAuthBoxForm } from './useSignInAuthBoxForm';
 
-import { Input } from '@/modules/auth/components/ui/Input/Input';
-import { PasswordInput } from '@/modules/auth/components/ui/PasswordInput/PasswordInput';
+import { Input } from '@/modules/ui/components/Input/Input';
+import { PasswordInput } from '@/modules/ui/components/PasswordInput/PasswordInput';
 
 export const SignInAuthBoxForm = () => {
 	const { register, control, isValid, signInFormAction, t } =

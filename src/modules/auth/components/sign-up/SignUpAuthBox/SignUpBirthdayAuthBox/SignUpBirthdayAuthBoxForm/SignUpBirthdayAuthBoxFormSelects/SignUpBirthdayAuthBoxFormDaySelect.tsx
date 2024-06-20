@@ -1,5 +1,5 @@
-import { Select } from '@/modules/auth/components/ui/Select/Select';
 import { getDaysInMonth } from '@/modules/auth/utils/calendar.utils';
+import { Select } from '@/modules/ui/components/Select/Select';
 
 type SignUpBirthdayAuthBoxFormDaySelectProps = Readonly<{
 	year: number;
