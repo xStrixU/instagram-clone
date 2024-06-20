@@ -1,4 +1,4 @@
-import { twJoin } from 'tailwind-merge';
+import { twMerge } from 'tailwind-merge';
 
 import SpinnerIcon from '@/modules/ui/assets/icons/spinner.svg';
 import { Slot } from '@/modules/ui/components/Slot';
@@ -7,7 +7,11 @@ import type { ReactNode } from 'react';
 
 import type { AsChildProps } from '@/modules/ui/components/Slot';
 
-export type ButtonProps = AsChildProps<{
+type ButtonCommonProps = Readonly<{
+	fullWidth?: boolean;
+}>;
+
+type ButtonAsChildProps = AsChildProps<{
 	type?: 'button' | 'submit';
 	disabled?: boolean;
 	isLoading?: boolean;
@@ -15,9 +19,12 @@ export type ButtonProps = AsChildProps<{
 	onClick?: () => void;
 }>;
 
-export const Button = ({ children, ...props }: ButtonProps) => {
-	const className = twJoin(
-		'flex h-8 w-full items-center justify-center rounded-lg bg-button-primary px-4 text-sm font-semibold text-white enabled:hover:bg-button-primary-hover enabled:active:bg-button-primary-hover/70 disabled:opacity-70',
+type ButtonProps = ButtonAsChildProps & ButtonCommonProps;
+
+export const Button = ({ children, fullWidth, ...props }: ButtonProps) => {
+	const className = twMerge(
+		'flex h-8 items-center justify-center rounded-lg bg-button-primary px-4 text-sm font-semibold text-white enabled:hover:bg-button-primary-hover enabled:active:bg-button-primary-hover/70 disabled:opacity-70',
+		fullWidth ? 'w-full' : 'w-fit',
 	);
 
 	if (props.asChild) {

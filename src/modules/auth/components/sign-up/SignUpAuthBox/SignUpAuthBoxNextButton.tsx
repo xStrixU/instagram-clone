@@ -16,5 +16,9 @@ export const SignUpAuthBoxNextButton = (
 ) => {
 	const t = useTranslations('auth.sign-up.SignUpAuthBox.steps');
 
-	return <Button {...props}>{t('next')}</Button>;
+	return (
+		<Button fullWidth {...props}>
+			{t('next')}
+		</Button>
+	);
 };

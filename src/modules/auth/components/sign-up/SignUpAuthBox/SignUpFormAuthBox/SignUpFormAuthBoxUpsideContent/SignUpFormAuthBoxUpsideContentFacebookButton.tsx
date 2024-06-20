@@ -8,7 +8,7 @@ export const SignUpFormAuthBoxUpsideContentFacebookButton = () => {
 	const t = useTranslations('auth.sign-up.SignUpAuthBox.form.upsideContent');
 
 	return (
-		<Button asChild>
+		<Button fullWidth asChild>
 			<Link href="/api/auth/facebook">
 				<FacebookTransparentIcon aria-hidden className="mr-2" />
 				{t('facebookLogin')}

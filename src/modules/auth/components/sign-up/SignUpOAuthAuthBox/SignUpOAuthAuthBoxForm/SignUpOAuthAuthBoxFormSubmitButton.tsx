@@ -14,7 +14,7 @@ export const SignUpOAuthAuthBoxFormSubmitButton = ({
 	const t = useTranslations('auth.sign-up.SignUpOAuthAuthBoxForm.form');
 
 	return (
-		<Button type="submit" disabled={disabled} isLoading={pending}>
+		<Button type="submit" disabled={disabled} isLoading={pending} fullWidth>
 			{t('submit')}
 		</Button>
 	);

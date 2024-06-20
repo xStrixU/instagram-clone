@@ -14,7 +14,7 @@ export const SignInAuthBoxFormSubmitButton = ({
 	const t = useTranslations('auth.sign-in.SignInAuthBox.form');
 
 	return (
-		<Button type="submit" disabled={disabled} isLoading={pending}>
+		<Button type="submit" disabled={disabled} isLoading={pending} fullWidth>
 			{t('submit')}
 		</Button>
 	);
