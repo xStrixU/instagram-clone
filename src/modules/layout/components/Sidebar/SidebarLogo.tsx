@@ -2,7 +2,7 @@
 
 import { twMerge } from 'tailwind-merge';
 
-import { useSidebarContext } from './Sidebar.provider';
+import { useSidebarStore } from './Sidebar.store';
 import { SidebarNavigationIconLinkItem } from './SidebarNavigation/SidebarNavigationItem/variants/SidebarNavigationIconLinkItem';
 
 import Logo from '@/common/assets/svg/logo.svg';
@@ -10,7 +10,7 @@ import MarkLogo from '@/common/assets/svg/mark-logo.svg';
 import { Link } from '@/features/i18n/lib/i18n.navigation';
 
 export const SidebarLogo = () => {
-	const { isCollapsed } = useSidebarContext();
+	const isCollapsed = useSidebarStore(state => state.isCollapsed);
 
 	return (
 		<div

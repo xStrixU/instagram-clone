@@ -1,6 +1,7 @@
 import { useId } from 'react';
+import { useShallow } from 'zustand/react/shallow';
 
-import { useSidebarContext } from '../../../../Sidebar.provider';
+import { useSidebarStore } from '../../../../Sidebar.store';
 
 interface UseSidebarNavigationSlidingBoxItemInput {
 	id: number;
@@ -9,8 +10,14 @@ interface UseSidebarNavigationSlidingBoxItemInput {
 export const useSidebarNavigationSlidingBoxItem = ({
 	id,
 }: UseSidebarNavigationSlidingBoxItemInput) => {
-	const { selectedItem, setIsCollapsed, setSelectedItem } = useSidebarContext();
 	const slidingBoxId = useId();
+	const [selectedItem, setIsCollapsed, setSelectedItem] = useSidebarStore(
+		useShallow(state => [
+			state.selectedItem,
+			state.setIsCollapsed,
+			state.setSelectedItem,
+		]),
+	);
 
 	const isActive = selectedItem === id;
 

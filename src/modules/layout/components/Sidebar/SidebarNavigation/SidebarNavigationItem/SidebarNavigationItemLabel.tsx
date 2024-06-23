@@ -3,7 +3,7 @@
 import { useTranslations } from 'next-intl';
 import { twMerge } from 'tailwind-merge';
 
-import { useSidebarContext } from '../../Sidebar.provider';
+import { useSidebarStore } from '../../Sidebar.store';
 
 import type { SidebarNavItemLabel } from './SidebarNavigationItem.types';
 
@@ -14,7 +14,7 @@ type SidebarNavigationItemLabelProps = Readonly<{
 export const SidebarNavigationItemLabel = ({
 	label,
 }: SidebarNavigationItemLabelProps) => {
-	const { isCollapsed } = useSidebarContext();
+	const isCollapsed = useSidebarStore(state => state.isCollapsed);
 	const t = useTranslations('layout.Sidebar.items');
 
 	return (

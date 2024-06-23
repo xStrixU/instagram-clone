@@ -1,10 +1,10 @@
 import { useTranslations } from 'next-intl';
 
-import { useSignUpAuthBoxContext } from '../../SignUpAuthBox.provider';
+import { useSignUpAuthBoxStore } from '../../SignUpAuthBox.store';
 import { SignUpConfirmationCodeAuthBoxUpperContentResendCodeButton } from './SignUpConfirmationCodeAuthBoxUpperContentResendCodeButton';
 
 export const SignUpConfirmationCodeAuthBoxUpperContent = () => {
-	const { formData } = useSignUpAuthBoxContext();
+	const formData = useSignUpAuthBoxStore(state => state.formData);
 	const t = useTranslations('auth.sign-up.SignUpAuthBox.confirmation-code');
 
 	return (
