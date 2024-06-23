@@ -1,7 +1,11 @@
-import { useSignUpAuthBoxContext } from '../../SignUpAuthBox.provider';
+import { useShallow } from 'zustand/react/shallow';
+
+import { useSignUpAuthBoxStore } from '../../SignUpAuthBox.store';
 
 export const SignUpConfirmationCodeAuthBoxFormDataInputs = () => {
-	const { formData, birthDate } = useSignUpAuthBoxContext();
+	const [formData, birthDate] = useSignUpAuthBoxStore(
+		useShallow(state => [state.formData, state.birthDate]),
+	);
 
 	if (!formData || !birthDate) {
 		return null;

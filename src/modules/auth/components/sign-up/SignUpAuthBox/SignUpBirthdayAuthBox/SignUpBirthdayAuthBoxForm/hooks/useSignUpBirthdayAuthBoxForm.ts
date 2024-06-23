@@ -1,6 +1,6 @@
 import { useTranslations } from 'next-intl';
 
-import { useSignUpAuthBoxContext } from '../../../SignUpAuthBox.provider';
+import { useSignUpAuthBoxStore } from '../../../SignUpAuthBox.store';
 import { useSignUpBirthdayAuthBoxFormBirthDate } from './useSignUpBirthdayAuthBoxFormBirthDate';
 
 import type { FormEvent } from 'react';
@@ -14,7 +14,7 @@ export const useSignUpBirthdayAuthBoxForm = ({
 }: UseSignUpBirthdayAuthBoxFormInput) => {
 	const { birthDate, dispatchBirthDate } =
 		useSignUpBirthdayAuthBoxFormBirthDate();
-	const { setBirthDate } = useSignUpAuthBoxContext();
+	const setBirthDate = useSignUpAuthBoxStore(state => state.setBirthDate);
 	const t = useTranslations('auth.sign-up.SignUpAuthBox.birthday');
 
 	const handleSubmit = (event: FormEvent<HTMLFormElement>) => {

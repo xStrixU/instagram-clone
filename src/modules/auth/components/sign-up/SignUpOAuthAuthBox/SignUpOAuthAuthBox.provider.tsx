@@ -30,10 +30,7 @@ const SignUpOAuthAuthBoxProvider = ({
 
 	return (
 		<SignUpOAuthAuthBoxContextProvider
-			value={{
-				signUpOAuthState,
-				signUpOAuthFormAction,
-			}}
+			value={{ signUpOAuthState, signUpOAuthFormAction }}
 		>
 			{children}
 		</SignUpOAuthAuthBoxContextProvider>

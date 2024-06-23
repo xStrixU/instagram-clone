@@ -5,7 +5,7 @@ import { useTranslations } from 'next-intl';
 import { createPortal } from 'react-dom';
 import { twMerge } from 'tailwind-merge';
 
-import { useSidebarContext } from '../../Sidebar.provider';
+import { useSidebarStore } from '../../Sidebar.store';
 
 import type { SidebarNavItemLabel } from '../SidebarNavigationItem/SidebarNavigationItem.types';
 import type { ReactNode } from 'react';
@@ -25,7 +25,7 @@ export const SidebarNavigationSlidingBox = ({
 	className,
 	children,
 }: SidebarNavigationSlidingBoxProps) => {
-	const { containerRef } = useSidebarContext();
+	const containerRef = useSidebarStore(state => state.containerRef);
 	const t = useTranslations('layout.Sidebar.items');
 
 	if (!containerRef.current) {

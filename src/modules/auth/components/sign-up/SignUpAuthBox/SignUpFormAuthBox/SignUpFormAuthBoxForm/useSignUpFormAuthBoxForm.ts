@@ -1,6 +1,7 @@
 import { useTranslations } from 'next-intl';
+import { useShallow } from 'zustand/react/shallow';
 
-import { useSignUpAuthBoxContext } from '../../SignUpAuthBox.provider';
+import { useSignUpAuthBoxStore } from '../../SignUpAuthBox.store';
 import { signUpFormAuthBoxFormSchema } from './SignUpFormAuthBoxForm.schema';
 
 import { useZodForm } from '@/common/hooks/useZodForm';
@@ -13,7 +14,9 @@ interface UseSignUpFormAuthBoxFormInput {
 export const useSignUpFormAuthBoxForm = ({
 	nextStep,
 }: UseSignUpFormAuthBoxFormInput) => {
-	const { formData, setFormData } = useSignUpAuthBoxContext();
+	const [formData, setFormData] = useSignUpAuthBoxStore(
+		useShallow(state => [state.formData, state.setFormData]),
+	);
 	const {
 		register,
 		handleSubmit,
